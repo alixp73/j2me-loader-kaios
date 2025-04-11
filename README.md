@@ -121,3 +121,13 @@ This project is licensed under the Apache License 2.0 - see the LICENSE file for
 
 - [J2ME-Loader](https://github.com/nikita36078/J2ME-Loader) - The original Android application
 - [KaiOS](https://www.kaiostech.com/) - The target platform
+
+
+
+
+
+
+
+#Hi, I don’t know programming, but I’m trying to use this program and it’s not working correctly. Can you please help me make it work  appreciate . Thank you!
+
+
