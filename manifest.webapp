@@ -1,0 +1,34 @@
+{
+  "name": "J2ME Loader",
+  "description": "J2ME Emulator for KaiOS",
+  "version": "1.0.0",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/img/icon56.png",
+    "112": "/img/icon112.png"
+  },
+  "developer": {
+    "name": "J2ME Loader Team",
+    "url": "https://github.com/nikita36078/J2ME-Loader"
+  },
+  "type": "privileged",
+  "permissions": {
+    "device-storage:sdcard": {
+      "access": "readwrite",
+      "description": "Required to read and write J2ME applications"
+    },
+    "storage": {
+      "description": "Required to store application data"
+    }
+  },
+  "locales": {
+    "en-US": {
+      "name": "J2ME Loader",
+      "subtitle": "J2ME Emulator for KaiOS",
+      "description": "Run your favorite J2ME applications on KaiOS"
+    }
+  },
+  "default_locale": "en-US",
+  "cursor": false,
+  "fullscreen": true
+}

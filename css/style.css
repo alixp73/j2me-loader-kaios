@@ -1,0 +1,294 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Header styles */
+#header {
+  background-color: #0061e0;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  height: 30px;
+}
+
+#header h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Content area */
+#content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Screen styles */
+.screen {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* List styles */
+.nav-list {
+  list-style: none;
+  width: 100%;
+}
+
+.nav-list li {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.nav-list li.focused {
+  background-color: #e0e0e0;
+}
+
+.nav-list li.no-apps {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+/* App details screen */
+.details-container {
+  padding: 15px;
+  text-align: center;
+}
+
+#app-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-initials {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+#app-name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#app-info {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 2px solid #0061e0;
+}
+
+.primary-btn {
+  background-color: #0061e0;
+  color: white;
+}
+
+.secondary-btn {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.danger-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Settings screen */
+.settings-container {
+  padding: 15px;
+}
+
+.settings-container h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+select:focus {
+  outline: 2px solid #0061e0;
+  border-color: #0061e0;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"]:focus {
+  outline: 2px solid #0061e0;
+}
+
+/* Emulator screen */
+#emulator-canvas {
+  width: 100%;
+  height: calc(100% - 80px);
+  background-color: black;
+}
+
+#virtual-keyboard {
+  height: 80px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+}
+
+/* File browser */
+.browser-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#current-path {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#file-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+}
+
+.file-icon {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.file-icon.folder {
+  background-image: url('../img/folder.png');
+}
+
+.file-icon.jar {
+  background-image: url('../img/jar.png');
+}
+
+.file-icon.file {
+  background-image: url('../img/file.png');
+}
+
+/* Loading indicator */
+#loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 1000;
+  display: none;
+}
+
+#loading-indicator.active {
+  display: block;
+}
+
+/* Soft keys */
+#softkeys {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0061e0;
+  color: white;
+  height: 30px;
+  padding: 0 5px;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+#softkey-left, #softkey-center, #softkey-right {
+  flex: 1;
+  text-align: center;
+}
+
+#softkey-left {
+  text-align: left;
+}
+
+#softkey-right {
+  text-align: right;
+}

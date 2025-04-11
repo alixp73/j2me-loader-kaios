@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>J2ME Loader</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="header">
+      <h1>J2ME Loader</h1>
+    </div>
+    
+    <div id="content">
+      <div id="app-list" class="screen active">
+        <div class="list-container">
+          <ul id="apps" class="nav-list">
+            <!-- Apps will be listed here -->
+            <li class="no-apps">No applications found</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div id="app-details" class="screen">
+        <div class="details-container">
+          <div id="app-icon"></div>
+          <h2 id="app-name"></h2>
+          <p id="app-info"></p>
+          <div class="button-container">
+            <button id="run-app" class="primary-btn">Run</button>
+            <button id="settings-app" class="secondary-btn">Settings</button>
+            <button id="delete-app" class="danger-btn">Delete</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="app-settings" class="screen">
+        <div class="settings-container">
+          <h2>Settings</h2>
+          <form id="settings-form">
+            <div class="form-group">
+              <label for="screen-size">Screen Size:</label>
+              <select id="screen-size" name="screen-size">
+                <option value="original">Original</option>
+                <option value="stretched">Stretched</option>
+                <option value="scaled">Scaled</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="orientation">Orientation:</label>
+              <select id="orientation" name="orientation">
+                <option value="auto">Auto</option>
+                <option value="portrait">Portrait</option>
+                <option value="landscape">Landscape</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="font-size">Font Size:</label>
+              <select id="font-size" name="font-size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="sound-enabled">Sound:</label>
+              <input type="checkbox" id="sound-enabled" name="sound-enabled" checked>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div id="emulator-screen" class="screen">
+        <canvas id="emulator-canvas"></canvas>
+        <div id="virtual-keyboard">
+          <!-- Virtual keyboard will be rendered here -->
+        </div>
+      </div>
+      
+      <div id="file-browser" class="screen">
+        <div class="browser-container">
+          <div id="current-path"></div>
+          <ul id="file-list" class="nav-list">
+            <!-- Files will be listed here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="softkeys">
+      <div id="softkey-left">Options</div>
+      <div id="softkey-center">Select</div>
+      <div id="softkey-right">Back</div>
+    </div>
+    
+    <div id="loading-indicator">Loading...</div>
+  </div>
+  
+  <!-- Load modules in the correct order -->
+  <script src="js/storage.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/file-browser.js"></script>
+  <script src="js/emulator-core.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
